@@ -4,4 +4,4 @@ git checkout master
 git remote
 git add rosenbrock.png
 git commit -m "Travis Commit"
-git push origin2
+git push 
