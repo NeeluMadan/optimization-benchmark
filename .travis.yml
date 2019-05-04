@@ -1,8 +1,12 @@
-language: python
-python:
- - "3.5"
-install:
- - pip install numpy matplotlib
+# Ruby is our language as asciidoctor is a ruby gem.
+lang: ruby
+before_install:
+  - sudo apt-get install pandoc
+  - gem install asciidoctor
 script:
- - python test.py
- - ls
+  - make
+after_success:
+  - ./push.sh
+env:
+  global:
+  - secure: 0XtXRsvEBSkvCGSjvX1hmS5T0rzM2qEpcTTXdId7X+UJATEcG6aZ2V+R8a+1Z53Td42H6jGMoqBI8BC4H+A5IT6D2308NwicVB6V9f1NvzyDVOTBR2CateParI2tHBZp4BPQhmYieC/ybFJHvOpPwwhgjkdkrnyfZmjhyI6lKJC0ncFgkJ6J5LRGmAQCeG/8EZfvX0bHvM7ytV7v1tu/FSsvrKhoOm+0it0OJNlhEkXeHTZidW7vfFtNeF1DXxCdaf9fdDis3tvluWp/MUlkYCnQvVWfQUO7hZDrvMU6garpSwKeF39mzMhGB2EKGjZJTmjTgIuoRFUZHPfIUSBV1L1aRpmRQUe7eqrNdryxEO+apxmhDMZwjNmPYw/ViJlFaQ/Vl7veYRH0QSJkAZV2ZQ8sY1VQz6Wv1V9eSP1ICHhYMvdYs43URCFuEhqKpCk9CGHmlANgQyzDd0ahO0aB8PgXV0boJcRjNIwiXYwyxmrjYsla508epzLhFB/+AiLmSXSwrRHVGTgEOeqbT5s1ru5ETcdpKiiLwBLbzocMFZifysd77hEmK4/NOpSYl49z6SQnkRb2C8lcMomsecvDT47v1WeEqeUszNuFyprENPd3grmPM8j71FE8p6m+ymhEm1Yjn8bE9DPbrkWs1z11b8R0NToB9upRZZRwMqawFZo=
