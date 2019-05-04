@@ -3,8 +3,6 @@ lang: ruby
 before_install:
   - sudo apt-get install pandoc
   - gem install asciidoctor
-script:
-  - make
 after_success:
   - ./push.sh
 env:
